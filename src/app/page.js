@@ -1,5 +1,9 @@
 import Image from "next/image";
-import Navbar from "../app/navbar"; // make sure this exists if you built the hamburger
+import Navbar from "../app/Navbar";
+
+
+
+
 
 export default function Home() {
   return (
@@ -18,7 +22,7 @@ export default function Home() {
             />
             <h1 className="text-4xl sm:text-6xl font-bold">Hi, I&apos;m Stephen Gray</h1>
             <p className="text-lg sm:text-xl max-w-xl mx-auto">
-              Aspiring front-end developer focused on building responsive web apps with clean design and efficient code.
+              Aspiring Software developer focused on building responsive web apps with clean design and efficient code.
             </p>
             <a
               href="#projects"
@@ -55,13 +59,13 @@ export default function Home() {
               <Image
                 src="/me-placeholder.jpg"
                 alt="Stephen Gray"
-                width={60}
-                height={60}
+                width={500}
+                height={100}
                 className="rounded-full border"
               />
               <div>
                 <h3 className="text-xl font-bold">Stephen Gray</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Front-End Developer</p>
+                <p className="text-sm text-gray-600 dark:text-gray-300">Software Developer</p>
               </div>
             </div>
             <div className="space-y-2 text-sm">

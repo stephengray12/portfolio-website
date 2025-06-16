@@ -8,9 +8,6 @@ export default function Navbar() {
 
   const projects = [
     { name: "Portfolio", href: "#projects" },
-    { name: "Weather App", href: "#projects" }, // Adjust hrefs if needed
-    { name: "ToDo App", href: "#projects" },
-    { name: "Contact", href: "#contact" },
   ];
 
   return (
