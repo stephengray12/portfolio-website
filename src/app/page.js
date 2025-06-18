@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Navbar from "../app/Navbar";
+import Navbar from "./Navbar";
 
 
 
