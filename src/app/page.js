@@ -11,10 +11,10 @@ export default function Home() {
         <section className="text-center space-y-4 mb-20">
           <div className="flex flex-col items-center gap-4">
             <Image
-              src="/me-placeholder.jpg"
+              src="/profilepic.png"
               alt="Stephen Gray"
-              width={150}
-              height={150}
+              width={400}
+              height={50}
               className="rounded-full border-4 border-blue-600"
             />
             <h1 className="text-4xl sm:text-6xl font-bold">Hi, I&apos;m Stephen Gray</h1>
