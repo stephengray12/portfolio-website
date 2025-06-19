@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Navbar from "./navbar";
+import Taskbar from "./taskbar";
 
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <taskbar />
       <main className="pt-24 min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white px-6 py-12">
         {/* Hero Section */}
         <section className="text-center space-y-4 mb-20">
