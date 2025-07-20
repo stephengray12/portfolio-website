@@ -1,33 +1,34 @@
 import Image from "next/image";
 import Taskbar from "./taskbar";
 
-
 export default function Home() {
   return (
     <>
-      <taskbar />
-      <main className="pt-24 min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-white px-6 py-12">
+      <Taskbar />
+      <main className="pt-24 min-h-screen bg-white dark:bg-black text-gray-800 dark:text-white px-6 py-12">
         {/* Hero Section */}
-        <section className="text-center space-y-4 mb-20">
-          <div className="flex flex-col items-center gap-4">
+        <section className="mb-20">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8 text-left">
             <Image
-              src="/profilepic.png"
+              src="/profile.PNG"
               alt="Stephen Gray"
-              width={400}
-              height={50}
-              className="rounded-full border-4 border-blue-600"
+              width={300}
+              height={150}
+              className="rounded-full"
             />
-            <h1 className="text-4xl sm:text-6xl font-bold">Hi, I&apos;m Stephen Gray</h1>
-            <p className="text-lg sm:text-xl max-w-xl mx-auto">
-              Aspiring Software developer focused on building responsive web apps with clean design and efficient code.
-            </p>
-            <a
-              href="#projects"
-              className="inline-block mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg 
-                         hover:bg-blue-700 hover:opacity-80 transition-opacity duration-300"
-            >
-              View My Projects
-            </a>
+            <div className="space-y-4">
+              <h1 className="text-4xl sm:text-6xl font-bold">Hi, I&apos;m Stephen Gray</h1>
+              <p className="text-lg sm:text-xl max-w-xl">
+                Aspiring Software developer focused on building responsive web apps with clean design and efficient code.
+              </p>
+              <a
+                href="#projects"
+                className="inline-block mt-2 px-6 py-2 bg-blue-600 text-white rounded-lg 
+                           hover:bg-blue-700 hover:opacity-80 transition-opacity duration-300"
+              >
+                View My Projects
+              </a>
+            </div>
           </div>
         </section>
 
@@ -35,16 +36,25 @@ export default function Home() {
         <section className="mb-20">
           <h2 className="text-2xl font-semibold mb-4">Skills</h2>
           <div className="flex flex-wrap gap-3">
-            {["JavaScript", "React", "Next.js", "TailwindCSS", "C++", "Git", "HTML", "Python", "Jquery", "CSS"].map(
-              (skill) => (
-                <span
-                  key={skill}
-                  className="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium"
-                >
-                  {skill}
-                </span>
-              )
-            )}
+            {[
+              "JavaScript",
+              "React",
+              "Next.js",
+              "TailwindCSS",
+              "C++",
+              "Git",
+              "HTML",
+              "Python",
+              "Jquery",
+              "CSS",
+            ].map((skill) => (
+              <span
+                key={skill}
+                className="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium"
+              >
+                {skill}
+              </span>
+            ))}
           </div>
         </section>
 

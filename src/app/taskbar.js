@@ -11,12 +11,8 @@ export default function Taskbar() {
   ];
 
   return (
-    <header className="bg-gray-900 text-white p-4 fixed top-0 left-0 w-full z-50 shadow-md">
+    <header className="bg-black text-white p-4 fixed top-0 left-0 w-full z-50 shadow-md">
       <div className="flex justify-between items-center max-w-5xl mx-auto">
-        <Link href="/" className="text-lg font-bold">
-          Stephen Gray
-        </Link>
-
         <button onClick={() => setOpen(!open)} className="md:hidden">
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
