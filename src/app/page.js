@@ -19,7 +19,7 @@ export default function Home() {
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-6xl font-bold">Hi, I&apos;m Stephen Gray</h1>
               <p className="text-lg sm:text-xl max-w-xl">
-                Aspiring Software developer focused on building responsive web apps with clean design and efficient code.
+                Aspiring Software Engineer focused on building responsive web apps with clean design and efficient code.
               </p>
               <a
                 href="#projects"
@@ -61,33 +61,33 @@ export default function Home() {
         {/* Business Card Section */}
         <section className="mb-20 text-center" id="contact">
           <h2 className="text-2xl font-semibold mb-6">Contact Me</h2>
-          <div className="inline-block bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg text-left max-w-md">
-            <div className="flex items-center space-x-4 mb-4">
+          <div className="w-full max-w-3xl mx-auto bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg text-left">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-6 mb-4">
               <Image
-                src="/me-placeholder.jpg"
+                src="/profile.PNG"
                 alt="Stephen Gray"
-                width={500}
-                height={100}
+                width={150}
+                height={150}
                 className="rounded-full border"
               />
               <div>
-                <h3 className="text-xl font-bold">Stephen Gray</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-300">Software Developer</p>
+                <h3 className="text-2xl font-bold">Stephen Gray</h3>
+                <p className="text-base text-gray-600 dark:text-gray-300">Software Engineer</p>
+                <div className="space-y-1 mt-4 text-sm">
+                  <p>
+                    <strong>Email:</strong>{" "}
+                    <a href="mailto:stephengrayjava12@outlook.com" className="text-blue-500">
+                      stephengrayjava12@outlook.com
+                    </a>
+                  </p>
+                  <p>
+                    <strong>Phone:</strong> (501) 297-8756
+                  </p>
+                  <p>
+                    <strong>Location:</strong> Little Rock, AR
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="space-y-2 text-sm">
-              <p>
-                <strong>Email:</strong>{" "}
-                <a href="mailto:you@example.com" className="text-blue-500">
-                  you@example.com
-                </a>
-              </p>
-              <p>
-                <strong>Phone:</strong> (123) 456-7890
-              </p>
-              <p>
-                <strong>Location:</strong> Little Rock, AR
-              </p>
             </div>
             <a
               href="/StephenGray-Resume.pdf"
