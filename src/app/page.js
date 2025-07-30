@@ -24,15 +24,15 @@ import {
 
 const skills = [
   { name: "JavaScript", icon: <FaJs />, level: 90 },
-  { name: "React", icon: <FaReact />, level: 85 },
-  { name: "Next.js", icon: <SiNextdotjs />, level: 80 },
-  { name: "TailwindCSS", icon: <SiTailwindcss />, level: 85 },
+  { name: "React", icon: <FaReact />, level: 80 },
+  { name: "Next.js", icon: <SiNextdotjs />, level: 50 },
+  { name: "TailwindCSS", icon: <SiTailwindcss />, level: 70 },
   { name: "C++", icon: <SiCplusplus />, level: 70 },
   { name: "Git", icon: <FaGitAlt />, level: 80 },
   { name: "HTML", icon: <FaHtml5 />, level: 95 },
   { name: "CSS", icon: <FaCss3Alt />, level: 90 },
-  { name: "Python", icon: <FaPython />, level: 75 },
-  { name: "jQuery", icon: <SiJquery />, level: 60 },
+  { name: "Python", icon: <FaPython />, level: 55 },
+  { name: "jQuery", icon: <SiJquery />, level: 40 },
 ];
 
 export default function Home() {
@@ -100,17 +100,16 @@ export default function Home() {
               <div key={skill.name}>
                 <div className="flex justify-between items-center mb-1">
                   <div className="flex items-center gap-2 text-sm font-medium text-black dark:text-white">
-                    <span className="text-xl">{skill.icon}</span>
+                    <span className="text-xl text-green-500">{skill.icon}</span>
                     {skill.name}
                   </div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">{skill.level}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700 overflow-hidden">
+                <div className="w-full md:w-1/2  bg-gray-200 rounded-full h-3 dark:bg-gray-700 overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: isInView ? `${skill.level}%` : 0 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
-                    className="bg-blue-500 h-3 rounded-full"
+                    className="bg-blue-300 h-3 rounded-full"
                   />
                 </div>
               </div>
