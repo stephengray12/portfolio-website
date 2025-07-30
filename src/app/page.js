@@ -98,13 +98,13 @@ export default function Home() {
           <div className="space-y-4">
             {skills.map((skill) => (
               <div key={skill.name}>
-                <div className="flex justify-between items-center mb-1">
+                <div className="flex items-center mb-1">
                   <div className="flex items-center gap-2 text-sm font-medium text-black dark:text-white">
                     <span className="text-xl text-green-500">{skill.icon}</span>
                     {skill.name}
                   </div>
                 </div>
-                <div className="w-full md:w-1/2  bg-gray-200 rounded-full h-3 dark:bg-gray-700 overflow-hidden">
+                <div className="w-full md:w-1/2 bg-gray-200 rounded-full h-3 dark:bg-gray-700 overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: isInView ? `${skill.level}%` : 0 }}
