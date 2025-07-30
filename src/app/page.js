@@ -1,8 +1,44 @@
+"use client"; // Required for framer-motion in Next.js app router
+
 import Image from "next/image";
 import Taskbar from "./taskbar";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+
+import {
+  FaJs,
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaGitAlt,
+  FaPython,
+  FaLinkedin,
+  FaGithub,
+} from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiCplusplus,
+  SiJquery,
+} from "react-icons/si";
+
+const skills = [
+  { name: "JavaScript", icon: <FaJs />, level: 90 },
+  { name: "React", icon: <FaReact />, level: 85 },
+  { name: "Next.js", icon: <SiNextdotjs />, level: 80 },
+  { name: "TailwindCSS", icon: <SiTailwindcss />, level: 85 },
+  { name: "C++", icon: <SiCplusplus />, level: 70 },
+  { name: "Git", icon: <FaGitAlt />, level: 80 },
+  { name: "HTML", icon: <FaHtml5 />, level: 95 },
+  { name: "CSS", icon: <FaCss3Alt />, level: 90 },
+  { name: "Python", icon: <FaPython />, level: 75 },
+  { name: "jQuery", icon: <SiJquery />, level: 60 },
+];
 
 export default function Home() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+
   return (
     <>
       <Taskbar />
@@ -18,10 +54,10 @@ export default function Home() {
               className="rounded-full"
             />
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-6xl font-bold text-black">
+              <h1 className="text-4xl sm:text-6xl font-bold text-white">
                 Hi, I&apos;m Stephen Gray
               </h1>
-              <p className="text-lg sm:text-xl max-w-xl text-black">
+              <p className="text-lg sm:text-xl max-w-xl text-white">
                 Aspiring Software Engineer focused on building responsive web
                 apps with clean design and efficient code.
               </p>
@@ -57,27 +93,27 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section className="mb-20">
-          <h2 className="text-2xl font-semibold mb-4 text-black">Skills</h2>
-          <div className="flex flex-wrap gap-3 text-black">
-            {[
-              "JavaScript",
-              "React",
-              "Next.js",
-              "TailwindCSS",
-              "C++",
-              "Git",
-              "HTML",
-              "Python",
-              "Jquery",
-              "CSS",
-            ].map((skill) => (
-              <span
-                key={skill}
-                className="px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm font-medium"
-              >
-                {skill}
-              </span>
+        <section className="mb-20" ref={ref}>
+          <h2 className="text-2xl font-semibold mb-6 text-black dark:text-white">Skills</h2>
+          <div className="space-y-4">
+            {skills.map((skill) => (
+              <div key={skill.name}>
+                <div className="flex justify-between items-center mb-1">
+                  <div className="flex items-center gap-2 text-sm font-medium text-black dark:text-white">
+                    <span className="text-xl">{skill.icon}</span>
+                    {skill.name}
+                  </div>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">{skill.level}%</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700 overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: isInView ? `${skill.level}%` : 0 }}
+                    transition={{ duration: 1, ease: "easeOut", delay: 0.1 }}
+                    className="bg-blue-500 h-3 rounded-full"
+                  />
+                </div>
+              </div>
             ))}
           </div>
         </section>
