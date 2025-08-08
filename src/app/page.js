@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Taskbar from "./taskbar";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 import {
@@ -22,6 +22,7 @@ import {
   SiJquery,
 } from "react-icons/si";
 
+// ===== Skills (progress bars) =====
 const skills = [
   { name: "JavaScript", icon: <FaJs />, level: 90 },
   { name: "React", icon: <FaReact />, level: 80 },
@@ -34,6 +35,63 @@ const skills = [
   { name: "Python", icon: <FaPython />, level: 55 },
   { name: "jQuery", icon: <SiJquery />, level: 40 },
 ];
+
+// ===== Project tech -> icon map =====
+const techIcon = {
+  React: <FaReact />,
+  "Next.js": <SiNextdotjs />,
+  Tailwind: <SiTailwindcss />,
+  TailwindCSS: <SiTailwindcss />,
+  JavaScript: <FaJs />,
+  JS: <FaJs />,
+  Python: <FaPython />,
+  "C++": <SiCplusplus />,
+  jQuery: <SiJquery />,
+  HTML: <FaHtml5 />,
+  CSS: <FaCss3Alt />,
+};
+
+
+// ===== projects =====
+const projects = [
+  {
+    title: "Nursing 'Till I Code",
+    desc: "Nursing 'Till I Code is a free, open-source site for nursing students, featuring clear blogs, quick-reference formulas, and interactive quizzes to make studying easier and more effective.", 
+    link: "https://www.nursingtillicode.org/", 
+    tech: ["CSS", "HTML", "JS"],
+  },
+  {
+    title: "Trigon Engineering",
+    desc:
+      "A website made for industrial manufacturing company Trigon Engineering, showcasing their services and expertise. This was an existing site that I redesigned to be more modern and responsive.",
+    link: "https://github.com/stephengray12/Trigon-Engineering", 
+    tech: ["React", "Tailwind", "JS", "HTML", "CSS"],
+  },
+  {
+    title: "Connect Four",
+    desc:
+      "A Connect four game made in my college programming II class. It features a simple GUI with sound and allows two players to play against each other.",
+    link: "https://github.com/stephengray12/cpsc2376-Gray/tree/main/projects/project04", 
+    tech: ["C++"],
+  },
+  {
+    title: "Raspberry Pi Projects",
+    desc:
+      "A github repository containing various Raspberry Pi projects. I plan to add a project to make a truly open-source HVAC Building Automation System for commercial use.",
+    link: "https://github.com/stephengray12/Rasberry_Pi_Projects",
+    tech: ["Python"],
+  },
+];
+
+// ===== Motion variants for project cards =====
+const cardVariants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut", delay: i * 0.08 },
+  }),
+};
 
 export default function Home() {
   const ref = useRef(null);
@@ -93,8 +151,10 @@ export default function Home() {
         </section>
 
         {/* Skills Section */}
-        <section className="mb-20" ref={ref}>
-          <h2 className="text-2xl font-semibold mb-6 text-black dark:text-white">Skills</h2>
+        <section className="mb-20 scroll-mt-24" ref={ref}>
+          <h2 className="text-2xl font-semibold mb-6 text-black dark:text-white">
+            Skills
+          </h2>
           <div className="space-y-4">
             {skills.map((skill) => (
               <div key={skill.name}>
@@ -117,9 +177,67 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Business Card Section */}
-        <section className="mb-20 text-center" id="contact">
-          <h2 className="text-2xl font-semibold mb-6 text-black">Contact Me</h2>
+        {/* About Section */}
+        <section id="about" className="scroll-mt-24 mb-20">
+          <h2 className="text-2xl font-semibold mb-4 text-black dark:text-white">
+            About
+          </h2>
+          <p className="max-w-3xl text-white">
+            I’m Stephen — controls tech turned software engineer. I build
+            practical tools for BAS, web apps with Next.js, and automation
+            scripts that actually make work easier.
+          </p>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="scroll-mt-24 mb-20">
+          <h2 className="text-2xl font-semibold mb-6 text-black dark:text-white">
+            Projects
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((p, i) => (
+              <motion.a
+                key={p.title}
+                href={p.link}
+                target="_blank"
+                rel="noreferrer"
+                className="block rounded-2xl border border-neutral-700/60 bg-black/40 p-5 hover:border-blue-400 transition"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={cardVariants}
+                custom={i}
+              >
+                <h3 className="text-xl font-semibold text-white">{p.title}</h3>
+                <p className="mt-2 text-neutral-300">{p.desc}</p>
+
+                {/* Tech icons */}
+                {p.tech?.length ? (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {p.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full border border-neutral-700 text-neutral-200"
+                        title={t}
+                        aria-label={t}
+                      >
+                        <span className="text-lg">{techIcon[t] ?? "🔧"}</span>
+                        <span className="uppercase tracking-wide">{t}</span>
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+              </motion.a>
+            ))}
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="mb-20 text-center scroll-mt-24" id="contact">
+          <h2 className="text-2xl font-semibold mb-6 text-black dark:text-white">
+            Contact Me
+          </h2>
           <div className="w-full max-w-3xl mx-auto bg-black p-6 rounded-lg shadow-lg text-left">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-6 mb-4">
               <Image
