@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,17 +13,39 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Stephen Gray",
-  description: "Stephen Gray's Portfolio - Aspiring Software Developer",
+  metadataBase: new URL("https://stephen.engineering"),
+  title: {
+    default: "Stephen Gray — Portfolio",
+    template: "%s | Stephen Gray",
+  },
+  description:
+    "CS junior at UA Little Rock and building automation engineer transitioning into software engineering. React/Next.js, C++, Python.",
+  openGraph: {
+    title: "Stephen Gray — Portfolio",
+    description:
+      "CS junior at UA Little Rock and building automation engineer transitioning into software engineering. React/Next.js, C++, Python.",
+    url: "https://stephen.engineering",
+    siteName: "Stephen Gray Portfolio",
+    images: ["/opengraph-image"], // served by app/opengraph-image.js
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Stephen Gray — Portfolio",
+    description:
+      "CS junior at UA Little Rock and building automation engineer transitioning into software engineering.",
+    images: ["/twitter-image"], // re-exports the OG image
+  },
+  themeColor: "#0ea5e9",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
