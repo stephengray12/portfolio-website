@@ -55,7 +55,7 @@ const projects = [
       "Nursing 'Till I Code is a free, open-source site for nursing students, featuring clear blogs, quick-reference formulas, and interactive quizzes to make studying easier and more effective.",
     link: "https://www.nursingtillicode.org/",
     tech: ["HTML", "CSS", "JS"],
-    image: "/nursingtillicode.png", // put file in /public/nursingtillicode.png (or adjust path)
+    image: "/nursingtillicode.png", 
   },
   {
     title: "Trigon Engineering",
@@ -64,7 +64,7 @@ const projects = [
     link: "https://github.com/stephengray12/Trigon-Engineering",
     tech: ["HTML", "JS", "Tailwind", "React"],
     image: "/trigonengineering.png",
-    // image: "/projects/trigon.png",
+    
   },
   {
     title: "Connect Four",
@@ -73,7 +73,7 @@ const projects = [
     link: "https://github.com/stephengray12/cpsc2376-Gray/tree/main/projects/project04",
     tech: ["C++"],
     image: "/connectfour.png",
-    // image: "/projects/connect-four.png",
+   
   },
   {
     title: "Raspberry Pi Projects",
@@ -81,7 +81,8 @@ const projects = [
       "A github repository containing various Raspberry Pi projects. I plan to add a project to make a truly open-source Building Automation System for commercial use.",
     link: "https://github.com/stephengray12/Rasberry_Pi_Projects",
     tech: ["Python"],
-    // image: "/projects/rpi.png",
+    image: "/raspberrypi.png"
+    
   },
 ];
 
@@ -146,7 +147,7 @@ const SkillBar = ({ skill, animate }) => (
   </div>
 );
 
-// UPDATED: consistent card height + image fit + scrollable description on hover
+
 const ProjectCard = ({ project, i }) => (
   <motion.a
     key={project.title}
@@ -160,7 +161,7 @@ const ProjectCard = ({ project, i }) => (
     variants={cardVariants}
     custom={i}
   >
-    {/* Screenshot (fits without cropping) */}
+   
     {project.image ? (
       <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-neutral-900 p-2">
         <Image
@@ -175,7 +176,7 @@ const ProjectCard = ({ project, i }) => (
 
     <h3 className="text-xl font-semibold text-white">{project.title}</h3>
 
-    {/* Description: clipped by default, scrolls on hover to keep card heights identical */}
+    
     <div className="mt-2 text-neutral-300 pr-1 overflow-hidden max-h-[96px] group-hover:overflow-auto">
       {project.desc}
     </div>
