@@ -93,7 +93,7 @@ const projects = [
     title: "Raspberry Pi Projects",
     desc:
       "A github repository containing my Raspberry Pi projects. I plan to add a project to make a truly open-source Building Automation System for commercial use.",
-    link: "https://github.com/stephengray12/Rasberry_Pi_Projects",
+    link: "https://github.com/stephengray12/Raspberry_Pi_Projects",
     tech: ["Python"],
     image: "/raspberrypi.png",
   },
