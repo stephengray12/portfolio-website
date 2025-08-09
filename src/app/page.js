@@ -23,14 +23,14 @@ import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiJquery } from "react-icons/s
 // =========================
 const skills = [
   { name: "JavaScript", icon: <FaJs />, level: 90 },
-  { name: "React", icon: <FaReact />, level: 80 },
-  { name: "Next.js", icon: <SiNextdotjs />, level: 50 },
+  { name: "React", icon: <FaReact />, level: 60 },
+  { name: "Next.js", icon: <SiNextdotjs />, level: 55 },
   { name: "TailwindCSS", icon: <SiTailwindcss />, level: 70 },
   { name: "C++", icon: <SiCplusplus />, level: 70 },
   { name: "Git", icon: <FaGitAlt />, level: 80 },
   { name: "HTML", icon: <FaHtml5 />, level: 95 },
   { name: "CSS", icon: <FaCss3Alt />, level: 90 },
-  { name: "Python", icon: <FaPython />, level: 55 },
+  { name: "Python", icon: <FaPython />, level: 45 },
   { name: "jQuery", icon: <SiJquery />, level: 40 },
 ];
 
@@ -48,6 +48,22 @@ const techIcon = {
   CSS: <FaCss3Alt />,
 };
 
+// Brand colors (official/common hexes)
+const brandColors = {
+  JavaScript: "#F7DF1E",
+  JS: "#F7DF1E",
+  React: "#61DAFB",
+  "Next.js": "#FFFFFF",
+  Tailwind: "#06B6D4",
+  TailwindCSS: "#06B6D4",
+  HTML: "#E34F26",
+  CSS: "#1572B6",
+  Git: "#F05032",
+  Python: "#3776AB",
+  "C++": "#00599C",
+  jQuery: "#0769AD",
+};
+
 const projects = [
   {
     title: "Nursing 'Till I Code",
@@ -55,7 +71,7 @@ const projects = [
       "Nursing 'Till I Code is a free, open-source site for nursing students, featuring quick-reference formulas, and interactive quizzes to make studying easier and more effective.I have additional plans to add a blog with a third party API integration.I also plan to add much more content in the future.",
     link: "https://www.nursingtillicode.org/",
     tech: ["HTML", "CSS", "JS"],
-    image: "/nursingtillicode.png", 
+    image: "/nursingtillicode.png",
   },
   {
     title: "Trigon Engineering",
@@ -64,7 +80,6 @@ const projects = [
     link: "https://github.com/stephengray12/Trigon-Engineering",
     tech: ["HTML", "JS", "Tailwind", "React"],
     image: "/trigonengineering.png",
-    
   },
   {
     title: "Connect Four",
@@ -73,7 +88,6 @@ const projects = [
     link: "https://github.com/stephengray12/cpsc2376-Gray/tree/main/projects/project04",
     tech: ["C++"],
     image: "/connectfour.png",
-   
   },
   {
     title: "Raspberry Pi Projects",
@@ -81,8 +95,7 @@ const projects = [
       "A github repository containing my Raspberry Pi projects. I plan to add a project to make a truly open-source Building Automation System for commercial use.",
     link: "https://github.com/stephengray12/Rasberry_Pi_Projects",
     tech: ["Python"],
-    image: "/raspberrypi.png"
-    
+    image: "/raspberrypi.png",
   },
 ];
 
@@ -128,11 +141,24 @@ const SocialLinks = ({ size = "text-2xl" }) => (
   </div>
 );
 
+// UPDATED: colored icons using brandColors
 const SkillBar = ({ skill, animate }) => (
   <div key={skill.name}>
     <div className="flex items-center mb-1">
       <div className="flex items-center gap-2 text-sm font-medium text-black dark:text-white">
-        <span className="text-xl text-green-500">{skill.icon}</span>
+        <span
+          className="text-xl"
+          style={{
+            color: brandColors[skill.name] || undefined,
+            // Make pure-white icons (Next.js) visible on dark bg
+            filter:
+              brandColors[skill.name] === "#FFFFFF"
+                ? "drop-shadow(0 0 2px rgba(0,0,0,.45))"
+                : undefined,
+          }}
+        >
+          {skill.icon}
+        </span>
         {skill.name}
       </div>
     </div>
@@ -147,7 +173,7 @@ const SkillBar = ({ skill, animate }) => (
   </div>
 );
 
-
+// UPDATED: consistent card height + image fit + colored tech icons + scrollable description on hover
 const ProjectCard = ({ project, i }) => (
   <motion.a
     key={project.title}
@@ -161,7 +187,7 @@ const ProjectCard = ({ project, i }) => (
     variants={cardVariants}
     custom={i}
   >
-   
+    {/* Screenshot (fits without cropping) */}
     {project.image ? (
       <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-black p-2">
         <Image
@@ -176,7 +202,7 @@ const ProjectCard = ({ project, i }) => (
 
     <h3 className="text-xl font-semibold text-white">{project.title}</h3>
 
-    
+    {/* Description: clipped by default, scrolls on hover to keep card heights identical */}
     <div className="mt-2 text-neutral-300 pr-1 overflow-hidden max-h-[96px] group-hover:overflow-auto">
       {project.desc}
     </div>
@@ -191,7 +217,18 @@ const ProjectCard = ({ project, i }) => (
             title={t}
             aria-label={t}
           >
-            <span className="text-lg">{techIcon[t] ?? "🔧"}</span>
+            <span
+              className="text-lg"
+              style={{
+                color: brandColors[t] || undefined,
+                filter:
+                  brandColors[t] === "#FFFFFF"
+                    ? "drop-shadow(0 0 2px rgba(0,0,0,.45))"
+                    : undefined,
+              }}
+            >
+              {techIcon[t] ?? "🔧"}
+            </span>
             <span className="uppercase tracking-wide">{t}</span>
           </span>
         ))}
@@ -253,9 +290,18 @@ export default function Home() {
         {/* About */}
         <section id="about" className="scroll-mt-24 mb-20">
           <SectionTitle>About</SectionTitle>
-          <p className="max-w-3xl text-white">
-            Hi, I’m Stephen Gray — a former electrician turned building automation engineer, now breaking into software engineering. I’ve collaborated on high-profile projects for Walmart HQ, UAMS, Baptist Health, Raytheon, and Westrock Coffee — including Arkansas’ first proton therapy facility. I thrive in team settings, love solving complex problems, and bring real-world engineering experience into every line of code I write. I’m currently a <span className="font-semibold">junior at the University of Arkansas at Little Rock</span> studying <span className="font-semibold">Computer Science</span>. When I’m not building solutions, you’ll find me spending time with my wife and kids in North Little Rock, AR.
-          </p>
+
+          <div className="max-w-3xl text-white space-y-3">
+            <p>
+              Hi, I’m Stephen Gray — a <span className="font-semibold">Computer Science junior at UA Little Rock</span> and a building automation engineer. I program building automation (BAS) controllers for customers like Walmart HQ, UAMS, Baptist Health, Raytheon, and Westrock Coffee.
+            </p>
+            <p>
+              I’m transitioning into <span className="font-semibold">software engineering</span> and love turning real-world problems into clean, reliable code.
+            </p>
+            <p className="text-neutral-300">
+              <strong>Looking for:</strong> entry-level Software Engineer role or SWE internship — and a mentor to guide my coding journey.
+            </p>
+          </div>
         </section>
 
         {/* Projects */}
