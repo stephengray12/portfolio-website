@@ -163,7 +163,7 @@ const ProjectCard = ({ project, i }) => (
   >
    
     {project.image ? (
-      <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-neutral-900 p-2">
+      <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden bg-black p-2">
         <Image
           src={project.image}
           alt={`${project.title} screenshot`}
