@@ -52,7 +52,7 @@ const projects = [
   {
     title: "Nursing 'Till I Code",
     desc:
-      "Nursing 'Till I Code is a free, open-source site for nursing students, featuring clear blogs, quick-reference formulas, and interactive quizzes to make studying easier and more effective.",
+      "Nursing 'Till I Code is a free, open-source site for nursing students, featuring quick-reference formulas, and interactive quizzes to make studying easier and more effective.I have additional plans to add a blog with a third party API integration.I also plan to add much more content in the future.",
     link: "https://www.nursingtillicode.org/",
     tech: ["HTML", "CSS", "JS"],
     image: "/nursingtillicode.png", 
@@ -60,7 +60,7 @@ const projects = [
   {
     title: "Trigon Engineering",
     desc:
-      "A website made for industrial manufacturing company Trigon Engineering, showcasing their services and expertise. This was an existing site that I redesigned to be more modern and responsive.",
+      "A website made for industrial manufacturing company Trigon Engineering. This was an existing website that lacked SEO and modern design. It was using http, and was not secure. I upgraded the site to use https and make it more mobily responsive as well as give the site a fresh new look.",
     link: "https://github.com/stephengray12/Trigon-Engineering",
     tech: ["HTML", "JS", "Tailwind", "React"],
     image: "/trigonengineering.png",
@@ -69,7 +69,7 @@ const projects = [
   {
     title: "Connect Four",
     desc:
-      "A Connect four game made in my college programming II class. It features a simple GUI with sound and allows two players to play against each other.",
+      "A game made in my programming II class made using C++. It has a simple GUI with sound. It features object-oriented programming principles.",
     link: "https://github.com/stephengray12/cpsc2376-Gray/tree/main/projects/project04",
     tech: ["C++"],
     image: "/connectfour.png",
@@ -78,7 +78,7 @@ const projects = [
   {
     title: "Raspberry Pi Projects",
     desc:
-      "A github repository containing various Raspberry Pi projects. I plan to add a project to make a truly open-source Building Automation System for commercial use.",
+      "A github repository containing my Raspberry Pi projects. I plan to add a project to make a truly open-source Building Automation System for commercial use.",
     link: "https://github.com/stephengray12/Rasberry_Pi_Projects",
     tech: ["Python"],
     image: "/raspberrypi.png"
