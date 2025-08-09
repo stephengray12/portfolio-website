@@ -6,8 +6,8 @@ Stephen Gray — Portfolio Website
 
 A fast, responsive portfolio built with Next.js (App Router), Tailwind, and Framer Motion. It showcases my skills, projects, and contact info—and documents my journey from building-automation engineer to software engineer.
 
-Live site: add your production URL here
-Repository: this repo
+Live site: https://stephen.engineering/
+
 
 ✨ Features
 Hero with social links and “View Projects” CTA
