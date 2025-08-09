@@ -63,6 +63,7 @@ const projects = [
       "A website made for industrial manufacturing company Trigon Engineering, showcasing their services and expertise. This was an existing site that I redesigned to be more modern and responsive.",
     link: "https://github.com/stephengray12/Trigon-Engineering",
     tech: ["HTML", "JS", "Tailwind", "React"],
+    image: "/trigonengineering.png",
     // image: "/projects/trigon.png",
   },
   {
@@ -71,6 +72,7 @@ const projects = [
       "A Connect four game made in my college programming II class. It features a simple GUI with sound and allows two players to play against each other.",
     link: "https://github.com/stephengray12/cpsc2376-Gray/tree/main/projects/project04",
     tech: ["C++"],
+    image: "/connectfour.png",
     // image: "/projects/connect-four.png",
   },
   {
