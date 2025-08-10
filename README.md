@@ -70,12 +70,23 @@ Quick Start
 Requirements
 Node.js 18+ (Next.js 14 recommends ≥ 18.17)
 
-npm (or pnpm/yarn/bun)
+npm 
 
 # install dependencies
 ```js
 npm install
 
+```
+
+```js
+# runtime deps
+npm i next react react-dom framer-motion react-icons @vercel/analytics
+
+# dev deps for Tailwind
+npm i -D tailwindcss postcss autoprefixer
+
+# one-time Tailwind init
+npx tailwindcss init -p
 ```
 
 # dev server
