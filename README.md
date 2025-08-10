@@ -79,13 +79,13 @@ npm install
 ```
 
 ```js
-# runtime deps
+
 npm i next react react-dom framer-motion react-icons @vercel/analytics
 
-# dev deps for Tailwind
+
 npm i -D tailwindcss postcss autoprefixer
 
-# one-time Tailwind init
+
 npx tailwindcss init -p
 ```
 
