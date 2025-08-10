@@ -82,7 +82,7 @@ npm install
 ```js
 npm run dev
 ```
-# → http://localhost:3000
+
 
 # production
 
