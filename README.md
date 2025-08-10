@@ -10,30 +10,6 @@ A fast, responsive portfolio built with Next.js (App Router), Tailwind, and Fram
 Live site: https://stephen.engineering
 Repo: https://github.com/stephengray12/portfolio-website
 
-Table of Contents
-Overview
-
-Features
-
-Tech Stack
-
-Quick Start
-
-Project Structure
-
-Content & Customization
-
-Screenshots
-
-SEO & Social
-
-Accessibility & Performance
-
-Roadmap
-
-Contact
-
-License
 
 Overview
 Hi, I’m Stephen Gray — a Computer Science junior at UA Little Rock and a building automation engineer. I program BAS controllers for customers like Walmart HQ, UAMS, Baptist Health, Raytheon, and Westrock Coffee. I’m transitioning into software engineering and love turning real-world problems into clean, reliable code.
