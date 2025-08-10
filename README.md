@@ -77,12 +77,18 @@ npm
 npm install
 
 ```
+# install additional libraries
+
+## install React Icons
 
 ```js
 
 npm i next react react-dom framer-motion react-icons @vercel/analytics
+```
 
+## install Tailwind
 
+```js
 npm i -D tailwindcss postcss autoprefixer
 
 
