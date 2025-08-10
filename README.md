@@ -79,12 +79,17 @@ npm install
 ```
 
 # dev server
+```js
 npm run dev
+```
 # → http://localhost:3000
 
 # production
+
+```js
 npm run build
 npm start
+```
 
 
 # Roadmap
