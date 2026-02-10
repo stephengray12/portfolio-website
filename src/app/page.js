@@ -368,7 +368,7 @@ export default function Home() {
             </div>
 
             <a
-              href="/StephenGray-Resume.pdf"
+              href="/Stephen_Gray_Resume.pdf"
               download
               className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 hover:opacity-80 transition-opacity duration-300"
             >
